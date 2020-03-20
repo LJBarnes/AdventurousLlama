@@ -4,13 +4,15 @@ import { Button } from 'reactstrap';
 
 
 
-const navbar = () => {
+const Navbar = () => {
     return (
+        <>
         <div className="navApp">
             yay
          <Button color="danger">Danger!</Button>
 
         </div>
+        </>
     )
 }
-export default navbar
+export default Navbar
