@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Wrapper from './components/wrapper/wrapper';
 import About from './pages/about/about';
 import Adventures from './pages/adventures/adventures';
-import Login from './pages/about/about';
+import Login from './pages/login/login';
 import Profile from './pages/profile/profile';
 import NotFoundPage from './pages/notFoundPage/notFoundPage'
 
@@ -22,7 +22,7 @@ function App() {
         <Wrapper>
           <Llamabar />
           <Switch>
-            <Route exact path="/" component={About} />
+            <Route exact path="/" component={Login} />
             <Route exact path="/About" component={About} />
             <Route exact path="/Adventures" component={Adventures} />
             <Route exact path="/Login" component={Login} />
