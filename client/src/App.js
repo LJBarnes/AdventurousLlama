@@ -5,9 +5,11 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Wrapper from './components/wrapper/wrapper';
 import About from './pages/about/about';
 import Adventures from './pages/adventures/adventures';
-import Login from './pages/login/login';
 import Profile from './pages/profile/profile';
 import NotFoundPage from './pages/notFoundPage/notFoundPage'
+ import Register from './pages/auth/Register';
+import Landing from './pages/landing page/Landing';
+import Login from './pages/auth/Login';
 
 
 
@@ -16,23 +18,24 @@ import NotFoundPage from './pages/notFoundPage/notFoundPage'
 function App() {
   return (
 
-    <div className="App">
-
-      <Router>
+    
+    <Router>
+      <div className="App">
         <Wrapper>
           <Llamabar />
           <Switch>
-            <Route exact path="/" component={Login} />
+            <Route exact path="/" component={Landing} />
+            <Route exact path="/register" component={Register} />
+            <Route exact path="/login" component={Login} />
             <Route exact path="/About" component={About} />
             <Route exact path="/Adventures" component={Adventures} />
-            <Route exact path="/Login" component={Login} />
             <Route exact path="/Profile" component={Profile} />
             <Route component={NotFoundPage} />
           </Switch>
         </Wrapper>
+        </div>
       </Router>
 
-    </div>
 
   );
 }
