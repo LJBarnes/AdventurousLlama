@@ -11,14 +11,14 @@ import NotFoundPage from './pages/notFoundPage/notFoundPage'
 import Landing from './pages/landing page/Landing';
 import Login from './pages/auth/Login';
 
-
-
+import { Provider } from "react-redux";
+import store from "./store";
 
 
 function App() {
   return (
 
-    
+    <Provider store={store}>
     <Router>
       <div className="App">
         <Wrapper>
@@ -35,7 +35,7 @@ function App() {
         </Wrapper>
         </div>
       </Router>
-
+      </Provider>
 
   );
 }
