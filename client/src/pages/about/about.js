@@ -1,50 +1,51 @@
-import React from "react";
-import "./style.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
-
-const About = () => {
-    return (
-        <div className="contactApp">
-
-
-            <div className="container">
-        <div className="card">
-                    <div className="card-header">
-                        <h3>Contact</h3>
-                    </div>
-            <div className="card-body">
-                        <blockquote className="blockquote mb-0">
-                            <div className="input-group">
-                        <div className="input-group-prepend">
-                                    <span className="input-group-text">First and last name</span>
-                                </div>
-                                <input type="text" aria-label="First name" className="form-control" />
-                                    <input type="text" aria-label="Last name" className="form-control" />
-                    </div>
-                    <div className="input-group mb-3">
-                                        <div className="input-group-prepend">
-                                            <span className="input-group-text" id="inputGroup-sizing-default">Email</span>
-                                        </div>
-                                        <input type="text" className="form-control" aria-label="Sizing example input"
-                                            aria-describedby="inputGroup-sizing-default" />
-                    </div>
-                    <div className="input-group mb-3">
-                                            <div className="input-group-prepend">
-                                                <span className="input-group-text" id="inputGroup-sizing-default">Message</span>
-                                            </div>
-                                            <textarea name="input" id="input" cols="30" rows="5"></textarea>
-                                        </div>
-                                        <input className="btn btn-primary" type="submit" value="Submit" />
-                </blockquote>
-                                    </div>
-
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { logoutUser } from "../../actions/authActions";
+class Dashboard extends Component {
+  onLogoutClick = e => {
+    e.preventDefault();
+    this.props.logoutUser();
+  };
+render() {
+    const { user } = this.props.auth;
+return (
+      <div style={{ height: "75vh" }} className="container valign-wrapper">
+        <div className="row">
+          <div className="col s12 center-align">
+            <h4>
+              <b>Hey there,</b> {user.name.split(" ")[0]}
+              <p className="flow-text grey-text text-darken-1">
+                You are logged into a full-stack{" "}
+                <span style={{ fontFamily: "monospace" }}>MERN</span> app 👏
+              </p>
+            </h4>
+            <button
+              style={{
+                width: "150px",
+                borderRadius: "3px",
+                letterSpacing: "1.5px",
+                marginTop: "1rem"
+              }}
+              onClick={this.onLogoutClick}
+              className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+            >
+              Logout
+            </button>
+          </div>
         </div>
-                            </div>
-
-
-
-
-        </div>
-                        )
-                    }
-export default About
+      </div>
+    );
+  }
+}
+Dashboard.propTypes = {
+  logoutUser: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired
+};
+const mapStateToProps = state => ({
+  auth: state.auth
+});
+export default connect(
+  mapStateToProps,
+  { logoutUser }
+)(Dashboard);
