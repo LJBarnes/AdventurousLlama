@@ -50,11 +50,10 @@ function App() {
             <Route exact path="/" component={Landing} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
-            {/* <Route exact path="/About" component={About} /> */}
             <PrivateRoute exact path="/Adventures" component={Adventures} />
             <PrivateRoute exact path="/Profile" component={Profile} />
-            {/* <Route component={NotFoundPage} /> */}
             <PrivateRoute exact path="/About" component={About} />
+            <Route component={NotFoundPage} />
             </Switch>
         </Wrapper>
         </div>
