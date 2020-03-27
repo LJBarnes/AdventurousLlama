@@ -2,12 +2,12 @@ import React, {useState} from "react";
 import "./style.css";
 
 const Login =(props)=>  {
-  // Setting the component's initial state
-//   state = {
-//     userName: "",
-//     email: "",
-//     password: ""
-//   };
+ // Setting the component's initial state
+  state = {
+    userName: "",
+    email: "",
+    password: ""
+  };
   const [userName, setUserName] = useState('');
   const [email, setEmail] =useState('');
   const [password, setPassword] = useState('');

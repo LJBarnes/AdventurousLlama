@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { loginUser } from "../../actions/authActions";
 import classnames from "classnames";
 
+
 class Login extends Component {
   constructor() {
     super();
@@ -56,10 +57,6 @@ class Login extends Component {
       <div className="container">
         <div style={{ marginTop: "4rem" }} className="row">
           <div className="col s8 offset-s2">
-            <Link to="/" className="btn-flat waves-effect">
-              <i className="material-icons left">keyboard_backspace</i> Back to
-              home
-            </Link>
             <div className="col s12" style={{ paddingLeft: "11.250px" }}>
               <h4>
                 <b>Login</b> below
@@ -70,6 +67,7 @@ class Login extends Component {
             </div>
             <form noValidate onSubmit={this.onSubmit}>
               <div className="input-field col s12">
+                
                 <input
                   onChange={this.onChange}
                   value={this.state.email}
@@ -81,7 +79,8 @@ class Login extends Component {
                   })}
                 />
                 <label htmlFor="email">Email</label>
-                <span className="red-text">
+                <br />
+                <span className="text-danger">
                   {errors.email}
                   {errors.emailnotfound}
                 </span>
@@ -98,7 +97,8 @@ class Login extends Component {
                   })}
                 />
                 <label htmlFor="password">Password</label>
-                <span className="red-text">
+                <br />
+                <span className="text-danger">
                   {errors.password}
                   {errors.passwordincorrect}
                 </span>
