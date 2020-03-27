@@ -10,7 +10,7 @@ const Profile = () => {
             <div className="container">
         <div className="card">
                     <div className="card-header">
-                        <h3>Contact</h3>
+                        <h3>Profile Page</h3>
                     </div>
             <div className="card-body">
                         <blockquote className="blockquote mb-0">
