@@ -7,6 +7,8 @@ import Detail from "../../components/Detail";
 class Adventures extends Component {
     state = {
     events: [],
+    // sets the state for isLoaded to false, when we setState, change to true, check for true or false in render
+    // if data is loading display "..Loading", if data is loaded display Detail component/data
     isLoaded: false
     };
 
