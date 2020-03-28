@@ -1,6 +1,7 @@
+require('dotenv').config()
 module.exports = {
-    mongoURI: "Ymongodb+srv://adventurous_llama:llamaAdventurous@cluster0-yuoqj.mongodb.net/test?retryWrites=true&w=majority", 
-    secretOrKey: "secret"
+    mongoURI: process.env.mongoURI, 
+    secretOrKey: process.env.secretOrKey
   };
 
   //this is the connection to mondodb atlas 
