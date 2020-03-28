@@ -1,50 +1,52 @@
-import React from "react";
-import "./style.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React, { Component } from "react";
+// import SearchForm from "./SearchForm";
+// import ResultList from "./ResultList";
+import API from "../../utils/API";
+import Detail from "../../components/Detail";
 
-const Adventures = () => {
-    return (
-        <div className="contactApp">
+class Adventures extends Component {
+    state = {
+    events: [],
+    isLoaded: false
+    };
+
+    // When this component mounts, return events within 50 mi of this lat/lon
+    componentDidMount() {
+        this.getEvents("44.309662,-73.261215");
+        
+    }
+
+    getEvents = query => {
+        API.events(query)
+            .then(res => {this.setState({ events: res.data._embedded.events, isLoaded: true });
+            console.log(this.state.events[0]);
+        })
+            .catch(err => console.log(err));
+            
+            
+    };
+
+    
+
+    render() {
+        const {isLoaded } = this.state;
+        if (!isLoaded) {
+            return <div>Loading...</div>
+        }
+
+        return (
+            <div>
+                {/* <Detail event={this.state.events}
+                    
+                 />
+                 {console.log(this.state.events[0].name)} */}
+                 {/* {console.log(this.state.events[0])} */}
+                 {/* {this.state.events.map(individualEvent => <Detail event={individualEvent} /> )} */}
+                 <Detail event={this.state.events[0]} /> 
+            </div>
+        );
+    }
+}
 
 
-            <div className="container">
-        <div className="card">
-                    <div className="card-header">
-                        <h3>Contact</h3>
-                    </div>
-            <div className="card-body">
-                        <blockquote className="blockquote mb-0">
-                            <div className="input-group">
-                        <div className="input-group-prepend">
-                                    <span className="input-group-text">First and last name</span>
-                                </div>
-                                <input type="text" aria-label="First name" className="form-control" />
-                                    <input type="text" aria-label="Last name" className="form-control" />
-                    </div>
-                    <div className="input-group mb-3">
-                                        <div className="input-group-prepend">
-                                            <span className="input-group-text" id="inputGroup-sizing-default">Email</span>
-                                        </div>
-                                        <input type="text" className="form-control" aria-label="Sizing example input"
-                                            aria-describedby="inputGroup-sizing-default" />
-                    </div>
-                    <div className="input-group mb-3">
-                                            <div className="input-group-prepend">
-                                                <span className="input-group-text" id="inputGroup-sizing-default">Message</span>
-                                            </div>
-                                            <textarea name="input" id="input" cols="30" rows="5"></textarea>
-                                        </div>
-                                        <input className="btn btn-primary" type="submit" value="Submit" />
-                </blockquote>
-                                    </div>
-
-        </div>
-                            </div>
-
-
-
-
-        </div>
-                        )
-                    }
-export default Adventures
+    export default Adventures;

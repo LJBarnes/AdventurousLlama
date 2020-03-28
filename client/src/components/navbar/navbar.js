@@ -24,13 +24,13 @@ const Llamabar = (props) => {
             <Collapse isOpen={isOpen} navbar>
               <Nav className="mr-auto" navbar>
                 <NavItem>
-                  <NavLink href="#">About</NavLink>
+                  <NavLink href="/About">About</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="#">Profile</NavLink>
+                  <NavLink href="Profile">Profile</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="#">Find Your Adventure</NavLink>
+                  <NavLink href="Adventures">Find Your Adventure</NavLink>
                 </NavItem>
 
 
