@@ -2,8 +2,7 @@ import React from "react";
 import "./style.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
-    Jumbotron, Button, Card, CardTitle, CardText, CardGroup,
-    CardSubtitle, CardBody
+    Jumbotron, Button, Card, CardTitle, CardText, CardGroup, CardBody
 } from 'reactstrap';
 const Profile = () => {
     return (
