@@ -4,7 +4,6 @@
   "description": "Event Matching App",
   "main": "server.js",
   "node": "12.16.x",
-
   "scripts": {
     "client-install": "npm install --prefix client",
     "start": "node server.js",
