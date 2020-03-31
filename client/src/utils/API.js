@@ -6,10 +6,11 @@ const partTwo= "&radius=50&unit=miles";
 
 // const APIKEY = "&api_key=dc6zaTOxFJmzC&limit=20";
 // const latlon = "";
-
+console.log("HERE API.JS");
 // Export an object with a "search" method that returns events from ticketmaster API for the passed query
 export default {
   events: function(query) {
+    console.log("HERE API.JS 2");
     return axios.get(BASEURL + query + partTwo);
   }
 };
