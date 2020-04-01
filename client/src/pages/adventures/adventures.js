@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 // import SearchForm from "./SearchForm";
 // import ResultList from "./ResultList";
-import API from "../../utils/API";
+// import API from "../../utils/API";
 import Detail from "../../components/Detail/Detail";
 import "./style.css";
+import $ from 'jquery';
 
 class Adventures extends Component {
 
@@ -26,17 +27,19 @@ class Adventures extends Component {
     }
 
     getEvents = query => {
-        API.events(query)
-            .then(res => {
-                var events = res.data._embedded.events
-                this.setState({
-                    events: events,
-                    isLoaded: true,
-                    currentEvent: 0
-                });
-                console.log(this.state.events[1]);
-            })
-            .catch(err => console.log(err));
+        $.ajax({
+            type: "GET",
+            url: "https://app.ticketmaster.com/discovery/v2/events.json?apikey=tWrBBZF24wNK5nm8P7SdsXOxHxs5yXvI&latlong=" + query + "&radius=50&unit=miles",
+            async: true,
+            dataType: "json"
+        }).done((json) => {
+            console.log(json._embedded.events);
+            this.setState({
+                events: json._embedded.events,
+                isLoaded: true,
+                currentEvent: 0
+            });
+        });
     };
 
     _ToggleNext() {
@@ -69,7 +72,7 @@ class Adventures extends Component {
                 <button className="btn btn-outline-success position" onClick={this._ToggleNext}>Let's Go!</button>
                 <br></br>
                 <br></br>
-                <button style={{position: "absolute", bottom: "50%", right: "70%", zIndex: "2"}} className="btn btn-outline-danger" onClick={this._ToggleNext}>Hard Pass.</button>
+                <button style={{ position: "absolute", bottom: "50%", right: "70%", zIndex: "2" }} className="btn btn-outline-danger" onClick={this._ToggleNext}>Hard Pass.</button>
 
                 <Detail event={events[currentEvent]} />
 
