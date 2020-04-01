@@ -5,7 +5,7 @@ import React, { Component } from "react";
 import Detail from "../../components/Detail/Detail";
 import "./style.css";
 import $ from 'jquery';
-
+import API from '../../utils/API'
 class Adventures extends Component {
 
     constructor(props) {
@@ -22,24 +22,26 @@ class Adventures extends Component {
 
     // When this component mounts, return events within 50 mi of this lat/lon
     componentDidMount() {
-        this.getEvents("44.309662,-73.261215");
+        this.getEvents("charlotte");
 
     }
 
-    getEvents = query => {
-        $.ajax({
-            type: "GET",
-            url: "https://app.ticketmaster.com/discovery/v2/events.json?apikey=tWrBBZF24wNK5nm8P7SdsXOxHxs5yXvI&latlong=" + query + "&radius=50&unit=miles",
-            async: true,
-            dataType: "json"
-        }).done((json) => {
-            console.log(json._embedded.events);
+    getEvents = async query => {
+        // $.ajax({
+        //     type: "GET",
+        //     url: "https://app.ticketmaster.com/discovery/v2/events.json?apikey=tWrBBZF24wNK5nm8P7SdsXOxHxs5yXvI&city=" + query + "&radius=50&unit=miles",
+        //     async: true,
+        //     dataType: "json"
+        //})
+        const results = await API.events(query)
+           
             this.setState({
-                events: json._embedded.events,
+                events: results.data._embedded.events,
                 isLoaded: true,
                 currentEvent: 0
             });
-        });
+        
+
     };
 
     _ToggleNext() {

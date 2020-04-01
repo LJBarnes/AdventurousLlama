@@ -19,6 +19,7 @@ import store from "./store";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 
 
+
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
   // Set auth token header auth
