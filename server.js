@@ -5,6 +5,7 @@ const path = require('path');
 const passport = require("passport");
 
 const users = require("./routes/api/users");
+const ticketMaster = require("./routes/api/ticket")
 require('dotenv').config()
 
 const app = express();
@@ -38,7 +39,7 @@ app.use(passport.initialize());
 require("./config/passport")(passport);
 // Routes
 app.use("/api/users", users);
-
+app.use("/api/ticket", ticketMaster);
 // Serve static assets if in production
 if(process.env.NODE_ENV === 'production') {
     //set static folder
