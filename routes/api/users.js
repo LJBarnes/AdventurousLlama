@@ -97,4 +97,20 @@ const email = req.body.email;
   });
 });
 
+// Route for posting event when user pushes like button
+// router.post("/register", (req, res) => {
+
+//   User.find({ event: req.body.event }).then(user => {
+
+//       const newUser = new User({
+//           event: req.body.event
+//       });
+
+//   });
+// });
+
+// router.post("/profile/:id", (req, res) => {
+
+// })
+
 module.exports = router;

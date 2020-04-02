@@ -37,9 +37,12 @@ mongoose
 app.use(passport.initialize());
 // Passport config
 require("./config/passport")(passport);
+
 // Routes
 app.use("/api/users", users);
 app.use("/api/ticket", ticketMaster);
+
+
 // Serve static assets if in production
 if(process.env.NODE_ENV === 'production') {
     //set static folder
