@@ -1,10 +1,6 @@
 import React, { Component } from "react";
-// import SearchForm from "./SearchForm";
-// import ResultList from "./ResultList";
-// import API from "../../utils/API";
 import Detail from "../../components/Detail/Detail";
 import "./style.css";
-import $ from 'jquery';
 import API from '../../utils/API'
 class Adventures extends Component {
 
@@ -13,7 +9,8 @@ class Adventures extends Component {
         this.state = {
             events: [],
             currentEvent: 0,
-            isLoaded: false
+            isLoaded: false,
+            name: ""
         }
         // this._TogglePrev = this._TogglePrev.bind(this);
         this._ToggleNext = this._ToggleNext.bind(this);
