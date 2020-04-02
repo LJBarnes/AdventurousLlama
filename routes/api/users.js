@@ -3,6 +3,7 @@ const router = express.Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const keys = require("../../config/keys");
+// const { userById } = require ('../../controllers/usersController');
 
 // Load input validation
 const validateRegisterInput = require("../../validation/register");
@@ -96,6 +97,9 @@ const email = req.body.email;
     });
   });
 });
+
+// any route containing :userID, our app will first execute userByID()
+// router.param('userId', userById);
 
 // Route for posting event when user pushes like button
 // router.post("/register", (req, res) => {

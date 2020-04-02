@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 const axios = require("axios");
 const User = require("../../models/user");
+// const { userById } = require ('../../controllers/usersController');
+
 const BASEURL = "https://app.ticketmaster.com/discovery/v2/events.json?apikey=";
 const partTwo = "&radius=50&unit=miles";
 const APIKEY = process.env.REACT_APP_KEY
@@ -15,5 +17,7 @@ router.post("/", (req, res) => {
         })
         .catch(err => { if (err) throw err })
 });
+
+// router.param('userId', userById);
 
 module.exports = router

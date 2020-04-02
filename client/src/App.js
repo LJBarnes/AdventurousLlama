@@ -10,7 +10,7 @@ import About from './pages/about/about';
 import Adventures from './pages/adventures/adventures';
 import Profile from './pages/profile/profile';
 import NotFoundPage from './pages/notFoundPage/notFoundPage'
- import Register from './pages/auth/Register';
+import Register from './pages/auth/Register';
 import Landing from './pages/landing page/Landing';
 import Login from './pages/auth/Login';
 
