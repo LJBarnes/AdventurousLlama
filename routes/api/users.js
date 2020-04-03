@@ -98,6 +98,14 @@ const email = req.body.email;
   });
 });
 
+router.get("/:id", (req, res) => {
+  // find by id and execute
+  console.log("hello", req.params.id)
+  User.findById(req.params.id, function (err, user) {
+    res.json(user)
+  });
+});
+
 // any route containing :userID, our app will first execute userByID()
 // router.param('userId', userById);
 

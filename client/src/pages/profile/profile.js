@@ -6,9 +6,19 @@ import {
 } from 'reactstrap';
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
+const axios = require("axios");
 
 const Profile = (props) => {
     const user = props.auth.user
+    console.log(user);
+
+    axios.get("/api/users/"+ user.id)
+        .then(({ data }) => {
+
+            console.log(data)
+        })
+        .catch(err => { if (err) throw err })
+
     return (
         <div className="llama">
 
@@ -16,6 +26,7 @@ const Profile = (props) => {
                 <div className="row">
                     <div className="col-md-12">
                         <h6>Hello {user.name}</h6>
+                        
                         <span className="avatar"><img src="/llama.png" alt="avatar" className="profilepic" /></span>
                     </div>
 
