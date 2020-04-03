@@ -41,7 +41,8 @@ class Adventures extends Component {
 
     };
 
-    _ToggleNext() {
+    _ToggleNext() { //split this good and pass 
+        
         if (this.state.currentEvent === this.state.events.length - 1)
             return;
 
@@ -51,6 +52,8 @@ class Adventures extends Component {
         console.log(this.state.currentEvent)
     }
 
+    //add function to 'lets go' btn to pass event information to db
+    //find syntax to pass the array of event to db - post method
 
 
     render() {
