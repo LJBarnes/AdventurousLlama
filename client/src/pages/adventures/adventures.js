@@ -62,12 +62,6 @@ class Adventures extends Component {
 
         return (
             <div className="Background">
-                {/* <Detail event={this.state.events}
-                    
-                 />
-                 {console.log(this.state.events[0].name)} */}
-                {/* {console.log(this.state.events[0])} */}
-                {/* {this.state.events.map(individualEvent => <Detail event={individualEvent} /> )} */}
                 <button className="btn btn-outline-success position" onClick={this._ToggleNext}>Let's Go!</button>
                 <br></br>
                 <br></br>

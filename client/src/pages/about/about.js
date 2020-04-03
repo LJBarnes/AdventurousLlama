@@ -12,6 +12,8 @@ class Dashboard extends Component {
   render() {
     const { user } = this.props.auth;
     return (
+      <div className="containter">
+        {/* <img src="/adventurellama.png" alt="adventure-llama" className="image"/> */}
       <div style={{ height: "75vh" }} className="container valign-wrapper">
         <div className="row">
           <div className="col s12 center-align">
@@ -47,6 +49,7 @@ class Dashboard extends Component {
             </div>
           </div>
         </div>
+      </div>
       </div>
 
     );

@@ -1,11 +1,3 @@
-.gradient {
-    /* transition: opacity 180ms ease-in-out; */
-background-color: white; /* For browsers that do not support gradients */
-background-image: linear-gradient(to bottom right, #ff9b70, #f88863, #f67c69, #fa757c, #f5666d 100%);
-background-repeat: no-repeat;
-   
-}
-
 
 .position {
     position:absolute; 
