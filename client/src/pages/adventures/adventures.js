@@ -1,11 +1,15 @@
 import React, { Component } from "react";
 import Detail from "../../components/Detail/Detail";
 import "./style.css";
-import API from '../../utils/API'
+import API from '../../utils/API';
+// import { connect } from "react-redux";
+// import { logoutUser } from "../../actions/authActions";
 class Adventures extends Component {
 
     constructor(props) {
         super(props);
+        
+
         this.state = {
             events: [],
             currentEvent: 0,
@@ -31,13 +35,13 @@ class Adventures extends Component {
         //     dataType: "json"
         //})
         const results = await API.events(query)
-           
-            this.setState({
-                events: results.data._embedded.events,
-                isLoaded: true,
-                currentEvent: 0
-            });
-        
+
+        this.setState({
+            events: results.data._embedded.events,
+            isLoaded: true,
+            currentEvent: 0
+        });
+
 
     };
 
@@ -51,7 +55,19 @@ class Adventures extends Component {
         console.log(this.state.currentEvent)
     }
 
-
+    // saveEvent() {
+    //     fetch('/api/event/'+ user.id, {
+    //         method: 'PUT',
+    //         headers: {
+    //             Accept: 'application/json',
+    //             'Content-Type': 'application/json',
+    //         },
+    //         body: JSON.stringify({
+    //             event: events[currentEvent].name,
+    //             secondParam: 'yourOtherValue',
+    //         }),
+    //     });
+    // }
 
     render() {
         const { isLoaded } = this.state;
@@ -62,10 +78,10 @@ class Adventures extends Component {
 
         return (
             <div className="Background">
-                <button className="btn btn-outline-success position" onClick={this._ToggleNext}>Let's Go!</button>
+                <button className="btn btn-outline-success position" onClick={this._ToggleNext} >Let's Go!</button>
                 <br></br>
                 <br></br>
-                <button style={{ position: "absolute", bottom: "50%", right: "70%", zIndex: "2" }} className="btn btn-outline-danger" onClick={this._ToggleNext}>Hard Pass.</button>
+                <button style={{ position: "absolute", bottom: "50%", right: "70%", zIndex: "2" }} className="btn btn-outline-danger pass" onClick={this._ToggleNext}>Hard Pass.</button>
 
                 <Detail event={events[currentEvent]} />
 

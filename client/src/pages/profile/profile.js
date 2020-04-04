@@ -2,7 +2,7 @@ import React from "react";
 import "./style.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
-    Jumbotron, Button, Card, CardTitle, CardText, CardGroup, CardBody
+    Jumbotron, Card, CardTitle, CardText, CardGroup, CardBody
 } from 'reactstrap';
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
@@ -48,8 +48,7 @@ const Profile = (props) => {
                         <Card>
                             <CardBody>
                                 <CardTitle><h5>Connections</h5></CardTitle>
-                                <CardText>Billy <Button>Email</Button> </CardText>
-                                <br />
+                                <CardText>Billy</CardText>
                                 <CardText>Sue </CardText>
                             </CardBody>
                         </Card>
