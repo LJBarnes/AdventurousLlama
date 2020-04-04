@@ -106,23 +106,9 @@ router.get("/:id", (req, res) => {
   });
 });
 
-// any route containing :userID, our app will first execute userByID()
-// router.param('userId', userById);
-
-// Route for posting event when user pushes like button
-// router.post("/register", (req, res) => {
-
-//   User.find({ event: req.body.event }).then(user => {
-
-//       const newUser = new User({
-//           event: req.body.event
-//       });
-
-//   });
-// });
-
-// router.post("/profile/:id", (req, res) => {
-
-// })
+// router.put("/event/:id", (req, res) => {
+//   User.findByIdAndUpdate(req.params.id, {$set { event: events[currentEvent].name }}, function (err,user) {
+//     res.json(user)});
+  
 
 module.exports = router;
