@@ -1,68 +1,27 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# AdventurousLlama - Find pals to adventure with!
 
-## Available Scripts
+# Authors: 
+Debbie Siles, Adam Wenger, Alex Garcia, Leah Barnes
 
-In the project directory, you can run:
+# Description:
+AdventurousLlama is a web application that allows users to search for local events and connect with new people who are interested in going to the same event they are.
 
-### `npm start`
+# Concept:
+Similar to a dating app, except that instead of matching by liked profile pictures, the app matches you to someone else who has liked the same event you do. We built this web app because we felt it was something that people would actually like and enjoy using. We also liked the idea of a friend or dating app that took away judging someone based on their appearance and concentrated instead on similar interests and providing events to go to together. 
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# User Story: 
+As someone who is interested in meeting new people and attending fun, local events, I want an easy and fun way to connect with others and find events to go to with new connections. 
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+# Technologies Used:
+React.js, MongoDB, Reactstrap, Bootstrap, Express, Passport.js, Redux, JWT (JSON Web Tokens), TicketMaster API, Node.js
 
-### `npm test`
+# Features:
+User Registration, Authenticated Login, User Profile, Search Local Events, Liked Events Added to User Profile, Connections To Other Users Who Like The Same Event
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![1](https://user-images.githubusercontent.com/53705501/78416423-9aef4c80-75f6-11ea-86b8-6ad73fbfd16d.jpg)
+![2](https://user-images.githubusercontent.com/53705501/78416430-a6db0e80-75f6-11ea-8640-110220196d0e.jpg)
+![5](https://user-images.githubusercontent.com/53705501/78416431-a93d6880-75f6-11ea-9501-fb1b2e118826.jpg)
+![3](https://user-images.githubusercontent.com/53705501/78416434-a9d5ff00-75f6-11ea-866d-057e4adb7747.jpg)
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
