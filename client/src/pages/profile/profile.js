@@ -15,7 +15,8 @@ const Profile = (props) => {
     axios.get("/api/users/"+ user.id)
         .then(({ data }) => {
 
-            console.log(data)
+            console.log(data);
+            console.log(`id: ${data._id}`)
         })
         .catch(err => { if (err) throw err })
 
@@ -55,8 +56,8 @@ const Profile = (props) => {
                         <Card>
                             <CardBody>
                                 <CardTitle><h5>My Events</h5></CardTitle>
-                                <CardText>Caamp</CardText>
-                                <CardText>Charlotte Symphony Orchestra</CardText>
+                                <CardText>Events here....</CardText>
+                                
                             </CardBody>
                         </Card>
 

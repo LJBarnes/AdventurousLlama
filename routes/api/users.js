@@ -3,7 +3,7 @@ const router = express.Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const keys = require("../../config/keys");
-// const { userById } = require ('../../controllers/usersController');
+
 
 // Load input validation
 const validateRegisterInput = require("../../validation/register");
@@ -105,10 +105,6 @@ router.get("/:id", (req, res) => {
     res.json(user)
   });
 });
-
-// router.put("/event/:id", (req, res) => {
-//   User.findByIdAndUpdate(req.params.id, {$set { event: events[currentEvent].name }}, function (err,user) {
-//     res.json(user)});
   
 
 module.exports = router;

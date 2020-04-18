@@ -14,10 +14,11 @@ class Adventures extends Component {
             events: [],
             currentEvent: 0,
             isLoaded: false,
-            name: ""
+            currentEvent2: 0
         }
         // this._TogglePrev = this._TogglePrev.bind(this);
         this._ToggleNext = this._ToggleNext.bind(this);
+        this.saveEvent = this.saveEvent.bind(this);
     }
 
 
@@ -28,12 +29,6 @@ class Adventures extends Component {
     }
 
     getEvents = async query => {
-        // $.ajax({
-        //     type: "GET",
-        //     url: "https://app.ticketmaster.com/discovery/v2/events.json?apikey=tWrBBZF24wNK5nm8P7SdsXOxHxs5yXvI&city=" + query + "&radius=50&unit=miles",
-        //     async: true,
-        //     dataType: "json"
-        //})
         const results = await API.events(query)
 
         this.setState({
@@ -46,6 +41,7 @@ class Adventures extends Component {
     };
 
     _ToggleNext() {
+        
         if (this.state.currentEvent === this.state.events.length - 1)
             return;
 
@@ -53,22 +49,20 @@ class Adventures extends Component {
             currentEvent: prevState.currentEvent + 1
         }))
         console.log(this.state.currentEvent)
+        
+        
     }
 
-    // saveEvent() {
-    //     fetch('/api/event/'+ user.id, {
-    //         method: 'PUT',
-    //         headers: {
-    //             Accept: 'application/json',
-    //             'Content-Type': 'application/json',
-    //         },
-    //         body: JSON.stringify({
-    //             event: events[currentEvent].name,
-    //             secondParam: 'yourOtherValue',
-    //         }),
-    //     });
-    // }
+    saveEvent() {
+        const currentEvent = this.state.currentEvent;
+        const newEvent = this.state.events[currentEvent].name 
+        console.log("save this name: " + newEvent )
+        
+    }
 
+    
+
+   
     render() {
         const { isLoaded } = this.state;
         if (!isLoaded) {
@@ -78,10 +72,10 @@ class Adventures extends Component {
 
         return (
             <div className="Background">
-                <button className="btn btn-outline-success position" onClick={this._ToggleNext} >Let's Go!</button>
+                <button className="btn btn-outline-success position" onClick={this.saveEvent} >Save This Event!</button>
                 <br></br>
                 <br></br>
-                <button style={{ position: "absolute", bottom: "50%", right: "70%", zIndex: "2" }} className="btn btn-outline-danger pass" onClick={this._ToggleNext}>Hard Pass.</button>
+                <button style={{ position: "absolute", bottom: "50%", right: "70%", zIndex: "2" }} className="btn btn-outline-warning" onClick={this._ToggleNext}>Next Event--></button>
 
                 <Detail event={events[currentEvent]} />
 
