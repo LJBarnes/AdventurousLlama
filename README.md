@@ -18,6 +18,8 @@ React.js, MongoDB, Reactstrap, Bootstrap, Express, Passport.js, Redux, JWT (JSON
 # Features:
 User Registration, Authenticated Login, User Profile, Search Local Events, Liked Events Added to User Profile, Connections To Other Users Who Like The Same Event
 
+Deployed Link: https://shrouded-taiga-41631.herokuapp.com/
+
 ![1](https://user-images.githubusercontent.com/53705501/78416423-9aef4c80-75f6-11ea-86b8-6ad73fbfd16d.jpg)
 ![2](https://user-images.githubusercontent.com/53705501/78416430-a6db0e80-75f6-11ea-8640-110220196d0e.jpg)
 ![5](https://user-images.githubusercontent.com/53705501/78416431-a93d6880-75f6-11ea-9501-fb1b2e118826.jpg)
